@@ -1,4 +1,4 @@
-from typing import Annotated, Any, Literal
+from typing import Literal
 
 from pydantic import computed_field, PostgresDsn
 from pydantic_core import MultiHostUrl
@@ -6,9 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(
-        env_file=".env", env_ignore_empty=True, extra="ignore"
-    )
+    model_config = SettingsConfigDict(env_ignore_empty=True, extra="ignore")
 
     ENVIRONMENT: Literal["local", "staging", "production"] = "local"
     PROJECT_NAME: str

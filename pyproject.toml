@@ -1,5 +1,6 @@
 [project]
 name = "random"
+package-mode = false
 version = "0.1.0"
 description = "fastapi templates"
 authors = [
